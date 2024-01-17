@@ -37,7 +37,7 @@ function askQuestion() {
 
 function gradeQuiz(candidateAnswers) {
   let grade = 0;
-  let noofCorrectAnsers=0;
+  let NoOfCorrectAnswers=0;
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
   for (let step = 0; step < 5; step++) {
     // Runs 5 times, with values of step 0 through 4.
@@ -46,7 +46,7 @@ function gradeQuiz(candidateAnswers) {
     console.log("Your Answer: " + candidateAnswers[step] + " \nCorrect Answer: " + correctAnswers[step])
     if(candidateAnswers[step].toUpperCase() == correctAnswers[step].toUpperCase()){
       grade += 20;
-      noofCorrectAnsers +=1;
+      NoOfCorrectAnswers +=1;
      } 
   
     
@@ -54,13 +54,13 @@ function gradeQuiz(candidateAnswers) {
 
   //TODO 3.2 use this variable to calculate the candidates score.
 
-  let percentage = (noofCorrectAnsers/questions.length)*100;
+  let percentage = (NoOfCorrectAnswers/questions.length)*100;
   console.log();
   if (percentage >=80) {
-    console.log(">>> Overall Grade: " + percentage + "% " + (noofCorrectAnsers + " of" + " 5 responses correct <<<"));
+    console.log(">>> Overall Grade: " + percentage + "% " + (NoOfCorrectAnswers + " of" + " 5 responses correct <<<"));
     console.log(">>> Status: PASSED <<<")
   } else {
-    console.log(">>> Overall Grade: " + percentage + "% " + (noofCorrectAnsers + " of" + " 5 responses correct <<<"));
+    console.log(">>> Overall Grade: " + percentage + "% " + (NoOfCorrectAnswers + " of" + " 5 responses correct <<<"));
     console.log(">>> Status: FAILED <<<");
   }
 
