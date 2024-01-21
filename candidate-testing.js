@@ -1,5 +1,5 @@
 const input = require('readline-sync');
-const prompt = require("prompt-sync")({sigint:true});
+
 
 // TODO 2: modify your quiz app to ask 5 questions //
 
@@ -20,7 +20,7 @@ let candidateAnswers = [];
 
 function askForName() {
   // TODO 1.1b: Ask for candidate's name //
-  candidateName = prompt("What is your Name?");
+  candidateName = input.question("What is your Name?");
 }
 
 function askQuestion() {
@@ -29,11 +29,10 @@ function askQuestion() {
 
   for (let step = 0; step < 5; step++) {
     // Runs 5 times, with values of step 0 through 4.
-    candidateAnswers[step] = prompt((questions[step]));
+    candidateAnswers[step] = input.question((questions[step]));
   }  
 
 }
-
 
 function gradeQuiz(candidateAnswers) {
   let grade = 0;
@@ -43,7 +42,7 @@ function gradeQuiz(candidateAnswers) {
     // Runs 5 times, with values of step 0 through 4.
     console.log();
     console.log(questions[step]);
-    console.log("Your Answer: " + candidateAnswers[step] + " \nCorrect Answer: " + correctAnswers[step])
+    console.log(`Your Answer: ${candidateAnswers[step]} \nCorrect Answer: ${correctAnswers[step]}`);
     if(candidateAnswers[step].toUpperCase() == correctAnswers[step].toUpperCase()){
       grade += 20;
       NoOfCorrectAnswers +=1;
@@ -57,10 +56,11 @@ function gradeQuiz(candidateAnswers) {
   let percentage = (NoOfCorrectAnswers/questions.length)*100;
   console.log();
   if (percentage >=80) {
-    console.log(">>> Overall Grade: " + percentage + "% " + (NoOfCorrectAnswers + " of" + " 5 responses correct <<<"));
-    console.log(">>> Status: PASSED <<<")
-  } else {
-    console.log(">>> Overall Grade: " + percentage + "% " + (NoOfCorrectAnswers + " of" + " 5 responses correct <<<"));
+    console.log(`>>> Overall Grade: ${percentage}% ${NoOfCorrectAnswers} of 5 responses correct <<<`);
+    console.log(">>> Status: PASSED <<<");
+
+  } else {    
+    console.log(`>>> Overall Grade: ${percentage}% ${NoOfCorrectAnswers} of 5 responses correct <<<`);
     console.log(">>> Status: FAILED <<<");
   }
 
