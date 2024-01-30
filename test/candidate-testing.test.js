@@ -38,11 +38,11 @@ describe("Candidate Testing solution", function() {
 	});
 
   it("Test 8. questions contained in questions array end with a trailing space", function() {
-		expect(solution.questions).toContain("1) Who was the first American woman in space? ");
-    expect(solution.questions).toContain("2) True or false: 5 kilometer == 5000 meters? ");
-    expect(solution.questions).toContain("3) (5 + 3)/2 * 10 = ? ");
-    expect(solution.questions).toContain("4) Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2? ");
-    expect(solution.questions).toContain("5) What is the minimum crew size for the ISS? ");
+		expect(solution.questions).toContain("Who was the first American woman in space? ");
+    expect(solution.questions).toContain("True or false: 5 kilometer == 5000 meters? ");
+    expect(solution.questions).toContain("(5 + 3)/2 * 10 = ? ");
+    expect(solution.questions).toContain("Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2? ");
+    expect(solution.questions).toContain("What is the minimum crew size for the ISS? ");
 	});
 
   // correctAnswers tests //
